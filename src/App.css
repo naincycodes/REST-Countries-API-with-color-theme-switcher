@@ -9,11 +9,18 @@ nav {
   box-shadow: 0 0 5px 2px rgb(234, 234, 234);
 }
 
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: black;
+}
+
 .dark-mode {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.3rem;
+  cursor: pointer;
 }
 
 .dark-mode img {
@@ -53,6 +60,10 @@ nav {
   font-size: 1rem;
   font-family: inherit;
   /* cursor: pointer; */
+}
+
+.mobileInput {
+  display: none;
 }
 
 ::placeholder {
@@ -102,4 +113,63 @@ nav {
   column-gap: 1.5rem;
   row-gap: 4rem;
   margin: 3rem 5rem;
+}
+
+@media (max-width: 1050px) {
+  body {
+    zoom: 80%;
+  }
+}
+
+@media (max-width: 810px) {
+  body {
+    zoom: 90%;
+  }
+  .search-and-filter-container {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+  .search-bar, .filterCountries {
+    margin-bottom: 0;
+  }
+  
+}
+
+@media (max-width: 655px) {
+  .mobileInput {
+    display: block;
+  }
+  .desktopInput {
+    display: none;
+  }
+  nav {
+    padding: 0 1rem;
+  }
+  .search-bar, .filterCountries, .country-card-parent {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  .search-bar, .filterCountries {
+    margin-top: 1rem;
+  }
+  .country-card-parent {
+    zoom: 90%;
+  }
+}
+
+@media (max-width: 485px) {
+  .country-card-parent {
+    zoom: 100%;
+    place-items: center;
+  }
+}
+
+@media (max-width: 400px) {
+  nav {
+    zoom: 90%;
+  }
+  .search-bar, .filterCountries {
+    padding: 0.5rem 1.5rem;
+  }
 }

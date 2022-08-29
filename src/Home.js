@@ -18,16 +18,30 @@ export default function Home() {
       )
     }
   }
+  function handleChange(e) {
+
+    setFilteredCountries(countriesData?.filter(country => {
+      return  country.name.common.toLowerCase().includes(e.target.value.toLowerCase())   
+    }))
+  }
   return (
     <>
       <div className="search-and-filter-container">
         <div className="search-bar">
           <img src={searchIcon} alt="search bar icon" />
-          <input
+          <input className="mobileInput"
+            onChange={handleChange}
+            type="search"
+            size="20"
+            placeholder="Search for a country..."
+          />
+          <input className="desktopInput"
+            onChange={handleChange}
             type="search"
             size="40"
             placeholder="Search for a country..."
           />
+         
         </div>
         <div className="filterCountries">
           <select onChange={showFilteredCountries}>
